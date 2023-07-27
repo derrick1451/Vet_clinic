@@ -8,14 +8,9 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -69,16 +64,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](will be added later)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -103,63 +88,10 @@ Example command:
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
 
-### Install
-
-Install this project with:
-
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
-
-### Usage
-
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
+  - cd my-folder
+  - git clone git@github.com:derrick1451/Vet_clinic.git
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,11 +99,11 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Ahmed Salah**
+👤 **Okongo Derrick**
 
-- GitHub: [@ahmed](https://github.com/derrick1451)
-- Twitter: [@AhmedEl18692792](https://twitter.com/DerrickHayle)
-- LinkedIn: [Ahmed Salah](https://www.linkedin.com/in/okongo-derrick)
+- GitHub: [@derrick1451](https://github.com/derrick1451)
+- Twitter: [@DerrickHayle](https://twitter.com/DerrickHayle)
+- LinkedIn: [okongo-derrick](https://www.linkedin.com/in/okongo-derrick)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
