@@ -14,3 +14,29 @@ INSERT INTO animals (name,date_of_birth,weight_kg,neutered,escape_attempts) VALU
 INSERT INTO animals (name,date_of_birth,weight_kg,neutered,escape_attempts) VALUES ('Boarmon','2005-06-07',20.4,true,7);
 INSERT INTO animals (name,date_of_birth,weight_kg,neutered,escape_attempts) VALUES ('Blossom','1998-10-13',17,true,3);
 INSERT INTO animals (name,date_of_birth,weight_kg,neutered,escape_attempts) VALUES ('Ditto','2022-05-14',22,true,4);
+
+-- Insert the following data into the owners table
+INSERT INTO owners (full_name,age) VALUES ('Sam Smith',34),('Jennifer Orwell',19),('Bob',45),('Melody Pond',77),('Dean Winchester',14),('Jodie Whittaker',38);
+
+-- Insert the following data into the species table
+INSERT INTO species (name) VALUES ('Pokemon'),('Digimon');
+
+-- Modify your inserted animals so it includes the species_id value
+UPDATE animals
+SET species_id = species.id
+FROM species
+WHERE (animals.name LIKE '%mon' AND species.name = 'Digimon')
+   OR (animals.name NOT LIKE '%mon' AND species.name = 'Pokemon');
+
+--    Modify your inserted animals to include owner information (owner_id)
+UPDATE animals
+SET owner_id = owners.id
+FROM owners
+WHERE owners.full_name IN ('Sam Smith', 'Jennifer Orwell', 'Bob', 'Melody Pond', 'Dean Winchester')
+  AND (
+    (animals.name = 'Agumon' AND owners.full_name = 'Sam Smith')
+    OR (animals.name IN ('Gabumon', 'Pikachu') AND owners.full_name = 'Jennifer Orwell')
+    OR (animals.name IN ('Devimon', 'Plantmon') AND owners.full_name = 'Bob')
+    OR (animals.name IN ('Charmander', 'Squirtle', 'Blossom') AND owners.full_name = 'Melody Pond')
+    OR (animals.name IN ('Angemon', 'Boarmon') AND owners.full_name = 'Dean Winchester')
+  );
