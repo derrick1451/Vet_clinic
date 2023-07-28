@@ -74,18 +74,41 @@ CREATE TABLE specializations (
 CREATE TABLE visits (
     animal_id INT,
     vet_id INT,
-    PRIMARY KEY (vet_id,animal_id)
+    date_of_visit  DATE NOT NULL,
+    PRIMARY KEY (vet_id,animal_id,date_of_visit)
 );
 
--- add foreign keys on the specializations table
-ALTER TABLE specializations
-ADD CONSTRAINT fk_spec
-FOREIGN KEY (spec_id)
-REFERENCES species(id)
-ON DELETE CASCADE;
+-- ADD A DATE COLUMN ON THE VISITS
 
+ALTER TABLE visits
+ADD COLUMN ;
+
+
+-- add foreign keys on the specializations table
 ALTER TABLE specializations
 ADD CONSTRAINT fk_vets
 FOREIGN KEY (vet_id)
 REFERENCES vets(id)
 ON DELETE CASCADE;
+
+ALTER TABLE specializations
+ADD CONSTRAINT fk_species
+FOREIGN KEY (spec_id)
+REFERENCES species(id)
+ON DELETE CASCADE;
+
+-- add foreign keys on the visits table
+ALTER TABLE visits
+ADD CONSTRAINT fk_animals
+FOREIGN KEY (animal_id)
+REFERENCES animals(id)
+ON DELETE CASCADE;
+
+ALTER TABLE visits
+ADD CONSTRAINT fk_vet
+FOREIGN KEY (vet_id)
+REFERENCES vets(id)
+ON DELETE CASCADE;
+
+-- ALTER TABLE visits
+-- DROP CONSTRAINT fk_animals;
