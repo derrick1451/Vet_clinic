@@ -51,3 +51,64 @@ ADD CONSTRAINT fk_owner
 FOREIGN KEY (owner_id)
 REFERENCES owners(id)
 ON DELETE CASCADE;
+
+
+-- Create a table named vets with the following columns
+CREATE TABLE vets (
+   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+name varchar(100) NOT NULL,
+age INT NOT NULL,
+date_of_graduation DATE NOT NULL 
+);
+
+-- There is a many-to-many relationship between the tables species and vets: a vet can specialize in multiple species, and a species can have multiple vets specialized in it. Create a "join table" called specializations to handle this relationship.
+
+CREATE TABLE specializations (
+    vet_id INT,
+    spec_id INT,
+    PRIMARY KEY (vet_id,spec_id)
+);
+
+-- There is a many-to-many relationship between the tables animals and vets: an animal can visit multiple vets and one vet can be visited by multiple animals. Create a "join table" called visits to handle this relationship, it should also keep track of the date of the visit.
+
+CREATE TABLE visits (
+    animal_id INT,
+    vet_id INT,
+    date_of_visit  DATE NOT NULL,
+    PRIMARY KEY (vet_id,animal_id,date_of_visit)
+);
+
+-- ADD A DATE COLUMN ON THE VISITS
+
+ALTER TABLE visits
+ADD COLUMN ;
+
+
+-- add foreign keys on the specializations table
+ALTER TABLE specializations
+ADD CONSTRAINT fk_vets
+FOREIGN KEY (vet_id)
+REFERENCES vets(id)
+ON DELETE CASCADE;
+
+ALTER TABLE specializations
+ADD CONSTRAINT fk_species
+FOREIGN KEY (spec_id)
+REFERENCES species(id)
+ON DELETE CASCADE;
+
+-- add foreign keys on the visits table
+ALTER TABLE visits
+ADD CONSTRAINT fk_animals
+FOREIGN KEY (animal_id)
+REFERENCES animals(id)
+ON DELETE CASCADE;
+
+ALTER TABLE visits
+ADD CONSTRAINT fk_vet
+FOREIGN KEY (vet_id)
+REFERENCES vets(id)
+ON DELETE CASCADE;
+
+-- ALTER TABLE visits
+-- DROP CONSTRAINT fk_animals;
